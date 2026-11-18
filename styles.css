@@ -340,6 +340,64 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 .entry p strong { color: var(--text-bright); font-weight: 600; }
 .entry p em { color: var(--text-dim); }
 
+/* ---------- NPC pull quotes ---------- */
+.quote { margin: 0; }
+.quote blockquote { margin: 0; }
+.quote p {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-bright);
+}
+.quote cite {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.quote cite::before {
+  content: "\2014\00a0\00a0";
+  color: var(--accent);
+}
+
+/* opening quote beneath the cover */
+.quote-section { padding: 72px 0 8px; }
+.quote-hero::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 5.5rem;
+  line-height: 0.45;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.quote-hero p {
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  line-height: 1.5;
+  max-width: 34ch;
+}
+
+/* atmospheric dividers */
+.quote-rule {
+  border-left: 2px solid var(--accent);
+  padding: 4px 0 4px 26px;
+}
+.quote-rule p {
+  font-size: 1.22rem;
+  line-height: 1.6;
+  max-width: 56ch;
+}
+.quote-rule cite { margin-top: 12px; }
+
+/* interludes inside the chronicle */
+.quote-inline { margin: 2px 0 4px; padding-top: 14px; padding-bottom: 10px; }
+
 /* ---------- world map figure ---------- */
 .map-figure {
   margin: 0;
