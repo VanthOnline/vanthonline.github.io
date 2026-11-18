@@ -1,6 +1,7 @@
 /* Vanth Online - Development Chronicle
    Lightweight enhancements: scroll progress bar, status filters,
-   back-to-top. The page is fully readable with JavaScript disabled. */
+   chronicle collapsing, back-to-top. The page is fully readable
+   with JavaScript disabled (nothing is collapsed without it). */
 
 (function () {
   "use strict";
@@ -30,28 +31,94 @@
     });
   }
 
-  /* ---------- timeline status filters ---------- */
+  /* ---------- timeline: filters + two-stage collapse ---------- */
   var filterBar = document.getElementById("filters");
+  var timelineList = document.getElementById("timelineList");
   var entries = Array.prototype.slice.call(document.querySelectorAll(".entry"));
 
-  if (filterBar && entries.length) {
-    filterBar.addEventListener("click", function (ev) {
-      var btn = ev.target.closest(".filter");
-      if (!btn) return;
+  var COLLAPSE_FROM = 3;   /* first 3 entries stay fully expanded */
+  var ARCHIVE_FROM = 10;   /* entries after the 10th sit behind the reveal button */
 
-      Array.prototype.forEach.call(filterBar.querySelectorAll(".filter"), function (b) {
-        b.classList.remove("active");
-      });
-      btn.classList.add("active");
+  var state = { currentFilter: "all", archiveRevealed: false };
 
-      var filter = btn.getAttribute("data-filter");
-      entries.forEach(function (entry) {
-        if (filter === "all" || entry.getAttribute("data-status") === filter) {
-          entry.classList.remove("hidden");
-        } else {
-          entry.classList.add("hidden");
-        }
-      });
+  function applyVisibility() {
+    entries.forEach(function (entry, idx) {
+      var matches =
+        state.currentFilter === "all" ||
+        entry.getAttribute("data-status") === state.currentFilter;
+      var archived = idx >= ARCHIVE_FROM && !state.archiveRevealed;
+      if (archived || !matches) entry.classList.add("hidden");
+      else entry.classList.remove("hidden");
     });
+  }
+
+  if (entries.length && timelineList) {
+    /* per-entry collapse toggles (entries after the third) */
+    entries.forEach(function (entry, idx) {
+      if (idx < COLLAPSE_FROM) return;
+
+      entry.classList.add("collapsed");
+      var body = entry.querySelector(".entry-body");
+      var chip = body ? body.querySelector(".chip") : null;
+
+      var btn = document.createElement("button");
+      btn.className = "entry-toggle";
+      btn.type = "button";
+      btn.textContent = "Details";
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function () {
+        var nowCollapsed = entry.classList.toggle("collapsed");
+        btn.setAttribute("aria-expanded", nowCollapsed ? "false" : "true");
+        btn.textContent = nowCollapsed ? "Details" : "Hide details";
+      });
+
+      if (body) {
+        var row = document.createElement("div");
+        row.className = "entry-details-row";
+        if (chip) {
+          body.insertBefore(row, chip);
+          row.appendChild(chip);
+        }
+        row.appendChild(btn);
+        body.appendChild(row);
+      }
+    });
+
+    /* archive reveal button after the 10th entry */
+    if (entries.length > ARCHIVE_FROM) {
+      var hiddenCount = entries.length - ARCHIVE_FROM;
+      var archBtn = document.createElement("button");
+      archBtn.className = "archive-toggle";
+      archBtn.type = "button";
+      archBtn.textContent = "Show older milestones (" + hiddenCount + ")";
+      var anchor = entries[ARCHIVE_FROM - 1];
+      if (anchor && anchor.parentNode) {
+        anchor.parentNode.insertBefore(archBtn, anchor.nextSibling);
+      } else {
+        timelineList.appendChild(archBtn);
+      }
+      archBtn.addEventListener("click", function () {
+        state.archiveRevealed = true;
+        applyVisibility();
+        archBtn.parentNode.removeChild(archBtn);
+      });
+    }
+
+    /* status filters (integrated with collapse/archive state) */
+    if (filterBar) {
+      filterBar.addEventListener("click", function (ev) {
+        var btn = ev.target.closest(".filter");
+        if (!btn) return;
+
+        Array.prototype.forEach.call(filterBar.querySelectorAll(".filter"), function (b) {
+          b.classList.remove("active");
+        });
+        btn.classList.add("active");
+        state.currentFilter = btn.getAttribute("data-filter");
+        applyVisibility();
+      });
+    }
+
+    applyVisibility();
   }
 })();
