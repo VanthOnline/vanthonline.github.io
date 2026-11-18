@@ -1,4 +1,4 @@
-# Vanth Online — Development Chronicle
+﻿# Vanth Online - Development Chronicle
 
 A public, single-page development-history site for **Vanth Online**, a custom fantasy MMORPG based on *The Saga of Vanth*.
 
@@ -6,13 +6,13 @@ A public, single-page development-history site for **Vanth Online**, a custom fa
 
 ## What it is
 
-A scrollable, reverse-chronological record of the project's milestones — newest first — with each entry labeled by how far along it is:
+A scrollable, reverse-chronological record of the project's milestones - newest first - with each entry labeled by how far along it is:
 
-- **Verified in-game** — played and confirmed working
-- **Built – needs testing** — running on the development server, awaiting hands-on testing
-- **Designed / planned** — agreed on paper, not yet built
-- **Investigating** — still being worked out
-- **Decision** — owner governance decisions
+- **Verified in-game** - played and confirmed working
+- **Built - needs testing** - running on the development server, awaiting hands-on testing
+- **Designed / planned** - agreed on paper, not yet built
+- **Investigating** - still being worked out
+- **Decision** - owner governance decisions
 
 The page also includes a project overview, the Blackport region map, a to-do list of pending items, and a summary of the project's design bibles.
 
