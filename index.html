@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118105351">
+<link rel="stylesheet" href="styles.css?v=20261118113502">
 </head>
 <body>
 
@@ -55,10 +55,11 @@
         <h3>Where things stand today</h3>
         <ul class="status-list">
           <li><span class="dot verified"></span><div><strong>The tutorial &amp; the boat ride</strong> are complete and confirmed working in the game.</div></li>
-          <li><span class="dot implemented"></span><div><strong>The Wreckwater reward system</strong> is installed and running &mdash; a full hands-on playtest is still to be scheduled.</div></li>
+          <li><span class="dot verified"></span><div><strong>First creature placement spots on the beach</strong> were chosen from terrain data and confirmed in the game &mdash; all open sand, clear of water and scenery.</div></li>
+          <li><span class="dot implemented"></span><div><strong>The Wreckwater reward system</strong> is installed and running &mdash; the silver-ring reward chance was repaired today; a full hands-on playtest is still to be scheduled.</div></li>
           <li><span class="dot implemented"></span><div><strong>The armor collection</strong> (480 pieces) is built and ready; trading between players not yet tried.</div></li>
           <li><span class="dot verified"></span><div><strong>Coin rewards &amp; safe item delivery</strong> are tested and working in-game.</div></li>
-          <li><span class="dot investigating"></span><div><strong>Zone map work</strong> is being investigated, step by step.</div></li>
+          <li><span class="dot investigating"></span><div><strong>The beach population</strong> is next: the zone's existing creatures are catalogued and the protected arrival area must be proven off-limits first.</div></li>
           <li><span class="dot designed"></span><div><strong>Undead ambushes &amp; full-pack safeguards</strong> are designed but not yet built.</div></li>
         </ul>
       </aside>
@@ -101,6 +102,49 @@
     </div>
 
     <div class="timeline" id="timelineList">
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 18, 2026</div>
+        <div class="entry-body">
+          <h3>First look: creatures placed on the beach by terrain survey</h3>
+          <p>For the first time, creature positions chosen automatically from the zone's terrain data were
+          checked in the game. The owner walked to three spots on the Wreckwater beach that had never held a
+          creature before: all three were open sand, clear of water and scenery. A harmless test creature was
+          summoned at each spot, looked right, and was removed again &mdash; nothing permanent was added. This
+          proves the automated placement method aims true. Roaming behavior and the protected arrival area
+          still need checking before the first real population.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 18, 2026</div>
+        <div class="entry-body">
+          <h3>Beach reward flow repaired</h3>
+          <p>A one-line setup slip had quietly disconnected the beach's <strong>25% silver-ring reward
+          chance</strong> from the rest of the reward system. The slip is fixed and the full automated test
+          suite passes. In a short in-game check the owner confirmed that <strong>coin rewards pay out as
+          expected</strong>. The ring-and-chunk reward itself is still awaiting a longer session with more
+          kills &mdash; expected, since every fight is an independent one-in-four chance.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="investigating">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 18, 2026</div>
+        <div class="entry-body">
+          <h3>Every existing creature in the starting zone catalogued</h3>
+          <p>Before any new population work, all 470 creature spawn records in the Wreckwater zone were
+          inventoried and sorted: 35 are kept as-is (the tutorial cast, the boat crew and the landmarks),
+          roughly half are candidates to be quietly retired, and the rest need the owner's judgment. No
+          creatures have been removed. This is the groundwork that lets the whole beach be repopulated later
+          from a plain-language description.</p>
+          <span class="chip investigating">Investigating</span>
+        </div>
+      </article>
 
       <article class="entry" data-status="implemented">
         <div class="entry-marker"></div>
@@ -419,13 +463,17 @@
       </div>
       <div class="panel pending-card">
         <span class="chip investigating">Investigating</span>
-        <h3>Zone map work</h3>
-        <p>Matching an in-game screenshot to real world coordinates so creatures can eventually be placed automatically. Two reference measurements from the owner are needed. Nothing new is spawned until the math is proven.</p>
+        <h3>Protected arrival area</h3>
+        <p>The sanctuary where new players come ashore must be proven off-limits &mdash; beach creatures
+        should never wander or chase into it. The terrain and game rules have been studied; one small
+        in-game test remains before the beach can be populated.</p>
       </div>
       <div class="panel pending-card">
-        <span class="chip investigating">Investigating</span>
-        <h3>Creature placement test</h3>
-        <p>First on the playtest list: temporarily placing two or three harmless creatures at pre-approved spots to confirm they sit correctly on the ground, then removing them.</p>
+        <span class="chip designed">Designed / planned</span>
+        <h3>Beach population</h3>
+        <p>Next step after the protected-area test: the owner describes the creatures and difficulty wanted
+        for a small stretch of beach, and the first region is populated from that description &mdash; with a
+        full rollback plan. No creatures have been placed yet.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip investigating">Investigating</span>
@@ -494,6 +542,6 @@
 
 <button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">&#9650;</button>
 
-<script src="script.js?v=20261118105351"></script>
+<script src="script.js?v=20261118113502"></script>
 </body>
 </html>
