@@ -1,28 +1,474 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vanth Online — development news and project progress.">
-  <title>Vanth Online — Development News</title>
-  <style>
-    :root {color-scheme:dark}
-    * {box-sizing:border-box}
-    body {margin:0; min-height:100vh; display:grid; place-items:center; background:radial-gradient(circle at 50% 20%,#29374b,#0b1019 70%); color:#e8dfc9; font:18px/1.7 Georgia,serif}
-    main {max-width:720px; padding:3rem 1.5rem; text-align:center}
-    h1 {font-size:clamp(2.8rem,8vw,5rem); letter-spacing:.035em; margin:0; color:#f1d89f}
-    p {margin:1rem 0}
-    .eyebrow {font:600 .75rem/1.6 system-ui,sans-serif; letter-spacing:.25em; color:#b9c6d6; text-transform:uppercase}
-    .rule {height:1px; max-width:260px; margin:2rem auto; background:linear-gradient(90deg,transparent,#987d4b,transparent)}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanth Online &mdash; Development Chronicle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <p class="eyebrow">A world in development</p>
-    <h1>Vanth Online</h1>
-    <div class="rule"></div>
-    <p>Development news, milestones, and the story of a world taking shape.</p>
-    <p class="eyebrow">The development journal is coming soon.</p>
-  </main>
+
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<header class="hero">
+  <img src="assets/vanth-login-art.png" alt="Vanth Online gold logo over dragon and castle sunset artwork" class="hero-cover">
+  <div class="hero-overlay">
+    <div class="hero-inner">
+      <p class="hero-kicker">The Saga of Vanth &mdash; A Development Chronicle</p>
+      <h1 class="hero-title"><span class="sr-only">Vanth Online &mdash; </span>Development History &amp; Project Status</h1>
+      <p class="hero-note">A public record of the project's development progress, newest first</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section class="section" id="overview">
+    <h2 class="section-title">About the Project</h2>
+    <div class="overview-grid">
+      <div class="panel overview-text">
+        <p><strong>Vanth Online</strong> is a custom fantasy MMORPG based on <em>The Saga of Vanth</em> book series.
+        Players create a character and explore a hand-built world &mdash; beginning with a boat arrival at the
+        coastal settlement of <strong>Wreckwater Reach</strong>, where a guided tutorial teaches movement, combat,
+        equipment and survival before players strike out toward the town of Blackport.</p>
+        <p>Development happens on a private development server, in regular working sessions. This page is the
+        running record of that work &mdash; the newest progress at the top, older milestones below.</p>
+        <p class="how-to-read"><strong>How to read the labels:</strong> every entry carries a colored stamp &mdash;
+        <span class="chip verified">Verified in-game</span> means it was played and confirmed working;
+        <span class="chip implemented">Built &ndash; needs testing</span> means it is running on the server but still
+        needs hands-on testing; <span class="chip designed">Designed / planned</span> means agreed on paper but not
+        yet built; <span class="chip investigating">Investigating</span> means still being worked out.</p>
+      </div>
+      <aside class="panel status-card">
+        <h3>Where things stand today</h3>
+        <ul class="status-list">
+          <li><span class="dot verified"></span><div><strong>The tutorial &amp; the boat ride</strong> are complete and confirmed working in the game.</div></li>
+          <li><span class="dot implemented"></span><div><strong>The Wreckwater reward system</strong> is installed and running &mdash; a full hands-on playtest is still to be scheduled.</div></li>
+          <li><span class="dot implemented"></span><div><strong>The armor collection</strong> (480 pieces) is built and ready; trading between players not yet tried.</div></li>
+          <li><span class="dot verified"></span><div><strong>Coin rewards &amp; safe item delivery</strong> are tested and working in-game.</div></li>
+          <li><span class="dot investigating"></span><div><strong>Zone map work</strong> is being investigated, step by step.</div></li>
+          <li><span class="dot designed"></span><div><strong>Undead ambushes &amp; full-pack safeguards</strong> are designed but not yet built.</div></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ WORLD MAP ============ -->
+  <section class="section" id="world">
+    <h2 class="section-title">The World So Far</h2>
+    <figure class="map-figure">
+      <img src="assets/blackport-region-map.png"
+           alt="Hand-illustrated map of the Blackport region: Blackport town and its docks on the Western Ocean, Black Harbor and the Underharbor in the mountains, a tunnel through to the Wreckwater Reach beach, and the Landspine Mountains to the south">
+      <figcaption>
+        <strong>The Blackport region &mdash; conceptual geography.</strong>
+        Development so far lives on the right-hand shore: <em>Wreckwater Reach</em>, the beach where newcomers
+        come ashore and learn the basics. From there the road runs past shipwrecks and a tunnel through the
+        mountains toward <em>Black Harbor</em>, the underground <em>Underharbor</em>, and the town of
+        <em>Blackport</em> on the Western Ocean &mdash; with the darker districts beyond for less scrupulous
+        characters. Conceptual map; not to scale.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="section" id="timeline">
+    <h2 class="section-title">The Chronicle</h2>
+    <p class="section-intro">Major milestones, newest first. Filter by how far along each item is:</p>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="verified">Verified in-game</button>
+      <button class="filter" data-filter="implemented">Built &ndash; needs testing</button>
+      <button class="filter" data-filter="designed">Designed / planned</button>
+      <button class="filter" data-filter="investigating">Investigating</button>
+      <button class="filter" data-filter="decision">Decision</button>
+    </div>
+
+    <div class="timeline" id="timelineList">
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17&ndash;18, 2026</div>
+        <div class="entry-body">
+          <h3>Old editor tool retired</h3>
+          <p>An unfinished in-house editor from early development has been removed from the game server. Checks confirmed no leftover editor-made content remains and every originally placed item is untouched. The game behaves exactly as before; one routine restart will finish clearing it out.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17&ndash;18, 2026</div>
+        <div class="entry-body">
+          <h3>Full Wreckwater reward system goes live</h3>
+          <p>The beach's complete reward system is now running on the game server: <strong>beach kills have a 25% chance</strong> to award a ring (the Saltworn Band the first time, then sellable Saltworn Silver chunks after that); the <strong>Blood Sucker boss always awards</strong> a reusable self-healing potion; any kill still has a <strong>10% chance</strong> to award a piece of armor picked to fit your character; and coins continue automatically as before. Rewards appear straight in your pack &mdash; there are no lootable corpses &mdash; and each fight produces a single combined <em>"You have new loot!"</em> notice. <strong>Still needed: a full hands-on playtest in the game (14 checks).</strong></p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17&ndash;18, 2026</div>
+        <div class="entry-body">
+          <h3>Game now recognizes the ring anywhere you keep it</h3>
+          <p>The game now checks for the Saltworn Band wherever it is &mdash; worn, packed in a bag, or stored away &mdash; so a player can never be handed a duplicate by mistake. Confirmed working by automated checks; a real hands-on test is still on the list.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17&ndash;18, 2026</div>
+        <div class="entry-body">
+          <h3>Armor rewards opened to every race</h3>
+          <p>Every reward armor piece can now be worn by characters of any race, while each class still receives its own style of armor. Automated testing across every class-and-race combination confirmed players only ever receive gear they can actually equip. One note: caster robes are now limited to caster classes, pending the owner's sign-off.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="investigating">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Armor progression check-up (levels 10&ndash;50)</h3>
+          <p>A detailed review found that at every major level (10, 20, 30, 40 and 50) each representative class has a complete set of reward-armor options covering every equipment slot, with steady power growth. Earning enough rewards at higher levels will depend on adding more zones to adventure in &mdash; a content task, not a defect. True combat balance still needs in-game testing.</p>
+          <span class="chip investigating">Investigating</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Armor rewards can now be traded</h3>
+          <p>Reward armor is no longer locked as untradeable, so players can gift or trade pieces with each other. Already active on the server &mdash; but an actual player-to-player trade hasn't been attempted yet.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Top-tier armor made earnable</h3>
+          <p>A math slip had made 27 of the 60 top-tier armor pieces (the level-46+ tier) impossible to ever earn. Fixed: every top-tier piece can now drop, with no stat changes.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Starter armor no longer blocks rewards</h3>
+          <p>The armor you start the tutorial with now counts when the game judges your equipped gear, so wearing a tutorial piece can never block a new armor reward. The random reward pool itself is unchanged.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Crocodile leftovers removed</h3>
+          <p>Wreckwater crocodiles were dropping leftover alligator hides inherited from the template they were built from. That's gone &mdash; crocodiles now follow Vanth's own reward rules only. Takes full effect the next time the zone resets.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Three fixes from the first full playthrough</h3>
+          <p>The owner's first complete beach playthrough surfaced three issues, all fixed: halfling warriors were being offered the wrong style of armor; a hidden glitch silently blocked every armor reward after a character's very first one; and mosquitoes were far too eager to swarm.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="decision">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 16&ndash;17, 2026</div>
+        <div class="entry-body">
+          <h3>Big-picture decisions for the project</h3>
+          <p>Three owner decisions shaped the road ahead. The project stays on its current development platform (a move to a different game engine was considered and set aside). A prototype that tried to play the game automatically was retired &mdash; real playtesting turned out to be faster. And custom potion-selling was ruled out of scope. A formal "think before building" review is now required for all major work.</p>
+          <span class="chip decision">Decision</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>Proved: a full pack never loses a reward</h3>
+          <p>A live, supervised test proved that a reward earned while your pack is full is never lost: it waits safely and slips into your inventory the moment space frees up. No duplicates, no lost items, nothing else disturbed.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="investigating">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 15, 2026</div>
+        <div class="entry-body">
+          <h3>Reward-rate study paused, lessons kept</h3>
+          <p>A large statistics run &mdash; simulating thousands of early beach sessions &mdash; was stopped early, but its saved results hinted that armor rewards were coming too heavily from one style; a later bug fix largely explains it. Final reward rates are still undecided.</p>
+          <span class="chip investigating">Investigating</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 15, 2026</div>
+        <div class="entry-body">
+          <h3>Faster "what if" simulations</h3>
+          <p>The offline tool that estimates leveling and gear pacing now runs several times faster and gives identical results no matter how many workers it uses. No gameplay settings were touched.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="decision">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 15, 2026</div>
+        <div class="entry-body">
+          <h3>Engine change considered &mdash; then set aside</h3>
+          <p>The project briefly paused to consider rebuilding on a different game engine. After review, the owner chose to keep building on the current platform; the exploration remains on file as history.</p>
+          <span class="chip decision">Decision</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 14, 2026</div>
+        <div class="entry-body">
+          <h3>The full armor collection built</h3>
+          <p>The complete armor catalog was built: <strong>480 pieces across five styles</strong>, each automatically matched to your class, level and current gear. Early math favored a <strong>10% reward chance</strong> (about nine in ten players earn roughly two pieces in their first hours on the beach); final numbers still await approval.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 13&ndash;14, 2026</div>
+        <div class="entry-body">
+          <h3>Coin rewards confirmed in-game</h3>
+          <p>Automatic coin rewards were confirmed working in the game: each kill pays an exact amount based on the monster's level, nearby group members are each paid in full, and outsiders &mdash; or monsters excluded from the system &mdash; get nothing. Coins are never split.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 13&ndash;14, 2026</div>
+        <div class="entry-body">
+          <h3>Tutorial confirmed complete, start to finish</h3>
+          <p>The full tutorial was confirmed working in the game on both the normal and skip paths: every lesson from the Captain through combat, armor, banking and spells; the graduation charm reward; corrected journal entries; and the soul-binding lesson with Seraphina.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 14, 2026</div>
+        <div class="entry-body">
+          <h3>First live reward deliveries</h3>
+          <p>The very first live test of rewards appearing directly in your pack: test daggers arrived instantly, each with the yellow <em>"You have new loot!"</em> flash, and a full pack correctly parked its reward for later. Deeper stress tests were still ahead at this point.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 14, 2026</div>
+        <div class="entry-body">
+          <h3>How new loot announces itself</h3>
+          <p>Screen tests settled how new rewards get your attention: the owner reviewed the options and chose the bright yellow, three-second <em>"You have new loot!"</em> flash now used across the whole reward system.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 12, 2026</div>
+        <div class="entry-body">
+          <h3>Crocodiles move into the shallows</h3>
+          <p>Six custom crocodiles now lurk in the Wreckwater shallows (levels 1&ndash;6, gradually taking over from the old sea turtles), with their looks and sizes confirmed in-game. Combat balance is still to be tested, and the two deepest levels wait in reserve for future content.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="designed">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 12, 2026</div>
+        <div class="entry-body">
+          <h3>The road ahead, in four steps</h3>
+          <p>Four owner-approved priorities: finish the starting experience and its reward system; research smarter automatic zone population; extend the adventures to roughly level 20; then give each class its own signature abilities and tune the pace with playtest evidence.</p>
+          <span class="chip designed">Designed / planned</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 11, 2026</div>
+        <div class="entry-body">
+          <h3>Tidying the starting area</h3>
+          <p>Early zone cleanup: a potion seller was placed (later made purely historical), a scholar was renamed and moved to a better spot, and fourteen leftover placeholder characters were removed from the beach. All placement changes were confirmed on screen in-game.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 8, 2026</div>
+        <div class="entry-body">
+          <h3>The boat ride works, end to end</h3>
+          <p>Nolwik's dinghy ride across the water was confirmed working in the game: the boatman, the clickable dock door, all dialogue pages, and both landing points there and back.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 7, 2026</div>
+        <div class="entry-body">
+          <h3>The full tutorial installed</h3>
+          <p>The complete fourteen-lesson tutorial (Captain &rarr; Cartographer &rarr; Researcher &rarr; ink delivery &rarr; Grufph &rarr; Reejis &rarr; Osrik &rarr; Garrick &rarr; Vaelith &rarr; graduation) was installed through a carefully guarded deployment with a full rollback plan, then polished. In-game walkthrough validation followed over the next week.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 5, 2026</div>
+        <div class="entry-body">
+          <h3>Every custom asset catalogued</h3>
+          <p>Every custom character, item and quest is now catalogued with stable names, build notes and history &mdash; the project's insurance policy for rebuilding, checking or moving content later without losing track of what belongs to whom.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="designed">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 4, 2026</div>
+        <div class="entry-body">
+          <h3>The tutorial's lesson plan written down</h3>
+          <p>The full lesson-by-lesson blueprint for the tutorial: who teaches what, how progress is tracked, the order of lessons, and the decisions the owner needed to make along the way.</p>
+          <span class="chip designed">Designed / planned</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 1, 2026</div>
+        <div class="entry-body">
+          <h3>The zone gets its name: Wreckwater Reach</h3>
+          <p>The zone's player-facing name officially became <strong>Wreckwater Reach</strong>. Only the visible name changed &mdash; renaming the hidden technical identifier would have touched hundreds of references and was judged too risky. Nothing else about the zone was modified.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="designed">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Late Oct &ndash; early Nov 2026</div>
+        <div class="entry-body">
+          <h3>Groundwork: rules, plans and the opening chapter</h3>
+          <p>The project's foundation: permanent operating rules (safety, backups, approvals, research before building), the Blackport tutorial chosen as the first project, and the arrival story &mdash; the boat, the first lessons, the road to town &mdash; as its opening chapter. Since then the rules have grown to include the formal review gate, solo-friendly progression, dialogue-writing standards and the approved designs for loot, undead ambushes, reward safety and character growth.</p>
+          <span class="chip designed">Designed / planned</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PENDING / INVESTIGATIONS ============ -->
+  <section class="section" id="pending">
+    <h2 class="section-title">On the To-Do List</h2>
+    <p class="section-intro">Nothing below is finished until it has been tried in the game and confirmed by the owner.</p>
+    <div class="pending-grid">
+      <div class="panel pending-card">
+        <span class="chip investigating">Investigating</span>
+        <h3>Hands-on reward playtest</h3>
+        <p>A 14-point in-game checklist for the new reward system: the ring rewards, the boss potion, combined notices, coin behavior, armor trades and group play. Waiting for a convenient session.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip investigating">Investigating</span>
+        <h3>Zone map work</h3>
+        <p>Matching an in-game screenshot to real world coordinates so creatures can eventually be placed automatically. Two reference measurements from the owner are needed. Nothing new is spawned until the math is proven.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip investigating">Investigating</span>
+        <h3>Creature placement test</h3>
+        <p>First on the playtest list: temporarily placing two or three harmless creatures at pre-approved spots to confirm they sit correctly on the ground, then removing them.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip investigating">Investigating</span>
+        <h3>Deeper delivery stress tests</h3>
+        <p>Remaining safety proofs for item delivery: duplicate protection across restarts and reconnects, simultaneous claims, and recovery from failures.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip designed">Designed / planned</span>
+        <h3>Full-pack overflow plan</h3>
+        <p>A designed safeguard so rewards still reach players whose packs are already full, beyond the safety net already proven in-game. Needs the owner's go-ahead before building.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip designed">Designed / planned</span>
+        <h3>Undead ambushes</h3>
+        <p>A designed system where the slain sometimes rise again as a surprise undead encounter &mdash; separate from loot, in three tiers of danger from ordinary to boss. Not yet built.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip designed">Designed / planned</span>
+        <h3>Smarter zone population</h3>
+        <p>Research into filling zones with creatures automatically but sensibly &mdash; respecting safe areas, terrain and limits &mdash; so new regions become faster to build.</p>
+      </div>
+      <div class="panel pending-card">
+        <span class="chip designed">Designed / planned</span>
+        <h3>Deliberately on hold</h3>
+        <p>Deferred until there's evidence: restocking the starting merchant with Vanth-made starter gear, fine-tuning early armor pacing, class-defining abilities, and final leveling and reward rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RULES & DOCS ============ -->
+  <section class="section" id="rules">
+    <h2 class="section-title">House Rules &amp; Design Bibles</h2>
+    <div class="rules-grid">
+      <div class="panel rule-card">
+        <h3>Permanent Operating Rules</h3>
+        <p>Nothing touches the live game without a backup and explicit approval; investigation is read-only by default. Major work runs a formal review first &mdash; goal, success measures, alternatives and risks &mdash; with the owner making the call. Also covers solo-friendly progression and dialogue-writing standards.</p>
+      </div>
+      <div class="panel rule-card">
+        <h3>Loot System Design</h3>
+        <p>The approved model: rewards are decided per fight and appear directly in your pack &mdash; there is no corpse-looting in Vanth. Coins are automatic; equipment is personalized to the character.</p>
+      </div>
+      <div class="panel rule-card">
+        <h3>Corpse Surprise Design</h3>
+        <p>Approved design, not yet built: sometimes the slain rise again as a surprise undead ambush &mdash; entirely separate from loot, in three tiers of danger (Ordinary, Deathbound, Dread).</p>
+      </div>
+      <div class="panel rule-card">
+        <h3>Reward Overflow Design</h3>
+        <p>An approved promise: no earned reward is ever lost, even when your pack is full. The core safety net is already proven in-game; the final layer still needs building.</p>
+      </div>
+      <div class="panel rule-card">
+        <h3>Progression &amp; Adventure Design</h3>
+        <p>Playable solo from start to finish: meaningful rewards for time invested rather than fast leveling, adaptive challenges only in special instanced adventures, and no mandatory group roles.</p>
+      </div>
+      <div class="panel rule-card">
+        <h3>Content Registry</h3>
+        <p>Every custom asset carries a stable identity, build notes and provenance, so content can be tracked, rebuilt or moved later without losing its history.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Vanth Online &mdash; development-history chronicle. Summarized from the project's own records; "Built &ndash; needs testing" entries are not yet confirmed by hands-on play. The world of Vanth Online is based on <em>The Saga of Vanth</em>.</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<script src="script.js"></script>
 </body>
 </html>
