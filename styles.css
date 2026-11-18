@@ -94,13 +94,14 @@ body {
   width: 100%;
 }
 .hero-kicker {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.34em;
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 14px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
 .hero-kicker::after {
   content: "";
@@ -365,20 +366,18 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   color: var(--accent);
 }
 
-/* opening quote beneath the cover */
+/* opening quote beneath the cover - set apart by a short red rule */
 .quote-section { padding: 64px 0 8px; }
 .quote-hero::before {
-  content: "\201C";
+  content: "";
   display: block;
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 3.6rem;
-  line-height: 0.45;
-  color: var(--accent);
-  margin-bottom: 16px;
+  width: 46px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 18px;
 }
 .quote-hero p {
-  font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+  font-size: clamp(1.15rem, 2.1vw, 1.38rem);
   line-height: 1.55;
   max-width: 46ch;
 }
