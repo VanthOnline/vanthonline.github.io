@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118215117">
+<link rel="stylesheet" href="styles.css?v=20261118215817">
 </head>
 <body>
 
@@ -26,15 +26,6 @@
 
 <main>
 
-  <!-- ============ OPENING QUOTE ============ -->
-  <section class="section quote-section" id="opening">
-    <figure class="quote quote-hero">
-      <blockquote>
-        <p id="openingQuote">The sea's full of people who know where they're going. Funny how many of 'em end up somewhere else.</p>
-      </blockquote>
-    </figure>
-  </section>
-
   <!-- ============ OVERVIEW ============ -->
   <section class="section" id="overview">
     <div class="overview-grid">
@@ -49,18 +40,17 @@
         <span class="chip verified">Verified in-game</span> means it was played and confirmed working;
         <span class="chip implemented">Built &ndash; needs testing</span> means it is running on the server but still
         needs hands-on testing; <span class="chip designed">Designed / planned</span> means agreed on paper but not
-        yet built; <span class="chip investigating">Investigating</span> means still being worked out.</p>
+        yet in the game (including staged proposals); <span class="chip investigating">Investigating</span> means still being worked out.</p>
       </div>
       <aside class="panel status-card">
         <h3>Where things stand today</h3>
         <ul class="status-list">
           <li><span class="dot verified"></span><div><strong>The tutorial &amp; the boat ride</strong> are complete and confirmed working in the game.</div></li>
-          <li><span class="dot verified"></span><div><strong>First creature placement spots on the beach</strong> were chosen from terrain data and confirmed in the game &mdash; all open sand, clear of water and scenery.</div></li>
-          <li><span class="dot implemented"></span><div><strong>Wreckwater item rewards</strong> are in a controlled playtest. The first Saltworn Band reached a character's pack; the other item types and the per-fight reward chance still need testing.</div></li>
-          <li><span class="dot implemented"></span><div><strong>The armor collection</strong> (480 pieces) is built and ready; trading between players not yet tried.</div></li>
-          <li><span class="dot verified"></span><div><strong>Coin rewards and the first Band delivery</strong> have been confirmed in-game. More delivery and recovery checks are scheduled.</div></li>
-          <li><span class="dot investigating"></span><div><strong>The beach population</strong> is next: the zone's existing creatures are catalogued and the protected arrival area must be proven off-limits first.</div></li>
-          <li><span class="dot designed"></span><div><strong>Undead ambushes</strong> are designed but not yet built; reward recovery checks are still in progress.</div></li>
+          <li><span class="dot verified"></span><div><strong>Coins and one Saltworn Band</strong> have reached players in controlled game tests. The Band appeared with a loot notice and a completed reward record.</div></li>
+          <li><span class="dot implemented"></span><div><strong>The armor collection and Wreckwater reward rules</strong> are built. Other item types, ordinary reward chances and recovery still need game tests.</div></li>
+          <li><span class="dot designed"></span><div><strong>A new beach wilderness</strong> is staged for owner review, with protected arrival spaces. No new permanent creatures have been deployed.</div></li>
+          <li><span class="dot investigating"></span><div><strong>The next reward session</strong> will test silver chunks, the Blood Sucker prize, duplicate claims, full packs and reconnect recovery.</div></li>
+          <li><span class="dot designed"></span><div><strong>Undead ambushes and later adventures</strong> remain planned for future development.</div></li>
         </ul>
       </aside>
     </div>
@@ -86,6 +76,11 @@
   <!-- ============ TIMELINE ============ -->
   <section class="section" id="timeline">
     <h2 class="section-title">The Chronicle</h2>
+    <figure class="quote quote-hero">
+      <blockquote>
+        <p id="openingQuote">The sea's full of people who know where they're going. Funny how many of 'em end up somewhere else.</p>
+      </blockquote>
+    </figure>
     <p class="section-intro">Major milestones, newest first. Filter by how far along each item is:</p>
     <div class="filters" id="filters">
       <button class="filter active" data-filter="all">All</button>
@@ -102,272 +97,89 @@
         <div class="entry-marker"></div>
         <div class="entry-date">Nov 18, 2026</div>
         <div class="entry-body">
-          <h3>First Saltworn Band delivered in the game</h3>
-          <p>A controlled test delivered the Saltworn Band directly into a character's pack. The player saw the loot notice, and the game recorded the reward. This confirms one real item-delivery path. Silver chunks, the boss reward, duplicate protection and full-pack recovery are still waiting for their own tests.</p>
+          <h3>The first Saltworn Band reaches a player</h3>
+          <p>A controlled test put a Saltworn Band straight into Bibbee's pack and showed the loot notice on screen. The game's records confirm one Band and one completed claim. Silver chunks, the Blood Sucker reward, duplicate protection and full-pack recovery still need their own tests.</p>
           <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 18, 2026</div>
-        <div class="entry-body">
-          <h3>First look: creatures placed on the beach by terrain survey</h3>
-          <p>For the first time, creature positions chosen automatically from the zone's terrain data were
-          checked in the game. The owner walked to three spots on the Wreckwater beach that had never held a
-          creature before: all three were open sand, clear of water and scenery. A harmless test creature was
-          summoned at each spot, looked right, and was removed again &mdash; nothing permanent was added. This
-          proves the automated placement method aims true. Roaming behavior still needs checking
-          before the first real population; the arrival landing will stay creature-free by design,
-          with all new creatures placed well away from it.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 18, 2026</div>
-        <div class="entry-body">
-          <h3>Beach reward flow repaired</h3>
-          <p>A one-line setup slip had quietly disconnected the beach's <strong>25% silver-ring reward
-          chance</strong> from the rest of the reward system. The slip is fixed and the full automated test
-          suite passes. In a short in-game check the owner confirmed that <strong>coin rewards pay out as
-          expected</strong>. The ring-and-chunk reward itself is still awaiting a longer session with more
-          kills &mdash; expected, since every fight is an independent one-in-four chance.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="investigating">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 18, 2026</div>
-        <div class="entry-body">
-          <h3>Every existing creature in the starting zone catalogued</h3>
-          <p>Before any new population work, all 470 creature spawn records in Wreckwater were
-          inventoried: 149 are protected, 291 are candidates for a reversible clearing, and 30 still need
-          a specific owner decision. The tutorial cast, boat crew and special encounters remain protected.
-          No creatures have been removed. This gives the owner a safe starting point for designing the beach.</p>
-          <span class="chip investigating">Investigating</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17&ndash;18, 2026</div>
-        <div class="entry-body">
-          <h3>Wreckwater rewards prepared for playtesting</h3>
-          <p>The beach reward rules are installed: a one-in-four chance for a Saltworn reward, a special reward from the Blood Sucker, and a one-in-ten chance for personalized armor, alongside automatic coins. The first Band delivery is confirmed. The normal per-fight item chances, other item types, full-pack recovery and combined notices still need hands-on checks before the system can be called complete.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17&ndash;18, 2026</div>
-        <div class="entry-body">
-          <h3>Game now recognizes the ring anywhere you keep it</h3>
-          <p>The game now checks for the Saltworn Band wherever it is &mdash; worn, packed in a bag, or stored away &mdash; so a player can never be handed a duplicate by mistake. Confirmed working by automated checks; a real hands-on test is still on the list.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17&ndash;18, 2026</div>
-        <div class="entry-body">
-          <h3>Armor rewards opened to every race</h3>
-          <p>Every reward armor piece can now be worn by characters of any race, while each class still receives its own style of armor. Automated testing across every class-and-race combination confirmed players only ever receive gear they can actually equip. One note: caster robes are now limited to caster classes, pending the owner's sign-off.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="investigating">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Armor progression check-up (levels 10&ndash;50)</h3>
-          <p>A detailed review found that at every major level (10, 20, 30, 40 and 50) each representative class has a complete set of reward-armor options covering every equipment slot, with steady power growth. Earning enough rewards at higher levels will depend on adding more zones to adventure in &mdash; a content task, not a defect. True combat balance still needs in-game testing.</p>
-          <span class="chip investigating">Investigating</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Armor rewards can now be traded</h3>
-          <p>Reward armor is no longer locked as untradeable, so players can gift or trade pieces with each other. Already active on the server &mdash; but an actual player-to-player trade hasn't been attempted yet.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Top-tier armor made earnable</h3>
-          <p>A math slip had made 27 of the 60 top-tier armor pieces (the level-46+ tier) impossible to ever earn. Fixed: every top-tier piece can now drop, with no stat changes.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Starter armor no longer blocks rewards</h3>
-          <p>The armor you start the tutorial with now counts when the game judges your equipped gear, so wearing a tutorial piece can never block a new armor reward. The random reward pool itself is unchanged.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Crocodile leftovers removed</h3>
-          <p>Wreckwater crocodiles were dropping leftover alligator hides inherited from the template they were built from. That's gone &mdash; crocodiles now follow Vanth's own reward rules only. Takes full effect the next time the zone resets.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>Three fixes from the first full playthrough</h3>
-          <p>The owner's first complete beach playthrough surfaced three issues, all fixed: halfling warriors were being offered the wrong style of armor; a hidden glitch silently blocked every armor reward after a character's very first one; and mosquitoes were far too eager to swarm.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="decision">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 16&ndash;17, 2026</div>
-        <div class="entry-body">
-          <h3>Big-picture decisions for the project</h3>
-          <p>Three owner decisions shaped the road ahead. The project stays on its current development platform (a move to a different game engine was considered and set aside). A prototype that tried to play the game automatically was retired &mdash; real playtesting turned out to be faster. And custom potion-selling was ruled out of scope. A formal "think before building" review is now required for all major work.</p>
-          <span class="chip decision">Decision</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17, 2026</div>
-        <div class="entry-body">
-          <h3>First full-pack test passed for a test item</h3>
-          <p>In a supervised earlier test, a test dagger waited when the pack was full and appeared after space opened. The current Saltworn rewards still need their own full-pack and reconnect checks.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="investigating">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 15, 2026</div>
-        <div class="entry-body">
-          <h3>Reward-rate study paused, lessons kept</h3>
-          <p>A large statistics run &mdash; simulating thousands of early beach sessions &mdash; was stopped early, but its saved results hinted that armor rewards were coming too heavily from one style; a later bug fix largely explains it. Final reward rates are still undecided.</p>
-          <span class="chip investigating">Investigating</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 15, 2026</div>
-        <div class="entry-body">
-          <h3>Faster "what if" simulations</h3>
-          <p>The offline tool that estimates leveling and gear pacing now runs several times faster and gives identical results no matter how many workers it uses. No gameplay settings were touched.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="decision">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 15, 2026</div>
-        <div class="entry-body">
-          <h3>Engine change considered &mdash; then set aside</h3>
-          <p>The project briefly paused to consider rebuilding on a different game engine. After review, the owner chose to keep building on the current platform; the exploration remains on file as history.</p>
-          <span class="chip decision">Decision</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 14, 2026</div>
-        <div class="entry-body">
-          <h3>The full armor collection built</h3>
-          <p>The complete armor catalog was built: <strong>480 pieces across five styles</strong>, each automatically matched to your class, level and current gear. Early math favored a <strong>10% reward chance</strong> (about nine in ten players earn roughly two pieces in their first hours on the beach); final numbers still await approval.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 13&ndash;14, 2026</div>
-        <div class="entry-body">
-          <h3>Coin rewards confirmed in-game</h3>
-          <p>Automatic coin rewards were confirmed working in the game: each kill pays an exact amount based on the monster's level, nearby group members are each paid in full, and outsiders &mdash; or monsters excluded from the system &mdash; get nothing. Coins are never split.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 13&ndash;14, 2026</div>
-        <div class="entry-body">
-          <h3>Tutorial confirmed complete, start to finish</h3>
-          <p>The full tutorial was confirmed working in the game on both the normal and skip paths: every lesson from the Captain through combat, armor, banking and spells; the graduation charm reward; corrected journal entries; and the soul-binding lesson with Seraphina.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 14, 2026</div>
-        <div class="entry-body">
-          <h3>First live reward deliveries</h3>
-          <p>The very first live test of rewards appearing directly in your pack: test daggers arrived instantly, each with the yellow <em>"You have new loot!"</em> flash, and a full pack correctly parked its reward for later. Deeper stress tests were still ahead at this point.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="verified">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 14, 2026</div>
-        <div class="entry-body">
-          <h3>How new loot announces itself</h3>
-          <p>Screen tests settled how new rewards get your attention: the owner reviewed the options and chose the bright yellow, three-second <em>"You have new loot!"</em> flash now used across the whole reward system.</p>
-          <span class="chip verified">Verified in-game</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 12, 2026</div>
-        <div class="entry-body">
-          <h3>Crocodiles move into the shallows</h3>
-          <p>Six custom crocodiles now lurk in the Wreckwater shallows (levels 1&ndash;6, gradually taking over from the old sea turtles), with their looks and sizes confirmed in-game. Combat balance is still to be tested, and the two deepest levels wait in reserve for future content.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
         </div>
       </article>
 
       <article class="entry" data-status="designed">
         <div class="entry-marker"></div>
-        <div class="entry-date">Nov 12, 2026</div>
+        <div class="entry-date">Nov 18, 2026</div>
         <div class="entry-body">
-          <h3>The road ahead, in four steps</h3>
-          <p>Four owner-approved priorities: finish the starting experience and its reward system; research smarter automatic zone population; extend the adventures to roughly level 20; then give each class its own signature abilities and tune the pace with playtest evidence.</p>
+          <h3>A livelier Wreckwater beach takes shape</h3>
+          <p>A mix of shore creatures has been prepared to make the beach feel like a living place, while keeping the arrival landing safe. Several proposed sites were checked in the game with temporary creatures. The population itself is staged for owner review; no new permanent creatures have been placed.</p>
           <span class="chip designed">Designed / planned</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="investigating">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 18, 2026</div>
+        <div class="entry-body">
+          <h3>Keeping Wreckwater's familiar faces safe</h3>
+          <p>The tutorial guides, boat crew and special encounters were identified before any wildlife changes. A full review of the existing beach gives the owner a way to refresh its creatures without disturbing those familiar faces. Nothing has been cleared yet.</p>
+          <span class="chip investigating">Investigating</span>
         </div>
       </article>
 
       <article class="entry" data-status="implemented">
         <div class="entry-marker"></div>
-        <div class="entry-date">Nov 11, 2026</div>
+        <div class="entry-date">Nov 17–18, 2026</div>
         <div class="entry-body">
-          <h3>Tidying the starting area</h3>
-          <p>Early zone cleanup: a potion seller was placed (later made purely historical), a scholar was renamed and moved to a better spot, and fourteen leftover placeholder characters were removed from the beach. All placement changes were confirmed on screen in-game.</p>
+          <h3>Wreckwater's reward choices enter playtesting</h3>
+          <p>The intended rewards give beach fights a chance at Saltworn silver, offer a special prize from the Blood Sucker, and can add armor suited to the player. The first Band delivery passed a controlled test, but the normal per-fight chances, other items and recovery behavior still need in-game proof. Coins already have separate in-game confirmation.</p>
           <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17–18, 2026</div>
+        <div class="entry-body">
+          <h3>Armor rewards fit more heroes</h3>
+          <p>The collection contains 480 pieces across five styles, chosen for a character's class, level and gear. The rules were widened so every race can wear its eligible pieces, and earlier gaps in high-level rewards and starter-armor checks were corrected. Automated checks pass; live reward balance and player trading still need testing.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="implemented">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 17, 2026</div>
+        <div class="entry-body">
+          <h3>The first full playthrough improved the beach</h3>
+          <p>The owner's playthrough caught armor being offered to the wrong kind of warrior, a glitch that blocked later armor rewards, and mosquitoes that swarmed too quickly. Those fixes are installed, making the opening adventure fairer; the updated rewards still need a broader live playtest.</p>
+          <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 14–17, 2026</div>
+        <div class="entry-body">
+          <h3>Early item tests showed the path into a full pack</h3>
+          <p>Supervised tests delivered a test dagger directly to a character and displayed the chosen yellow loot notice. In one test, the dagger waited while the pack was full and arrived after space opened. That result belongs to the test item; the current Saltworn items have separate full-pack and reconnect checks pending.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 13–14, 2026</div>
+        <div class="entry-body">
+          <h3>Coins arrive after a fight</h3>
+          <p>In-game checks confirmed that eligible kills pay coins automatically, with the amount tied to the creature's level. Nearby eligible group members each receive their own award, so companions can adventure together without dividing one purse.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 13–14, 2026</div>
+        <div class="entry-body">
+          <h3>The opening lessons work from start to finish</h3>
+          <p>The owner completed both the normal tutorial and its skip route in-game. New arrivals can learn movement, combat, equipment, banking and spells, then graduate with their charm and a clear way forward. The tutorial cast remains protected during beach population work.</p>
+          <span class="chip verified">Verified in-game</span>
         </div>
       </article>
 
@@ -375,58 +187,48 @@
         <div class="entry-marker"></div>
         <div class="entry-date">Nov 8, 2026</div>
         <div class="entry-body">
-          <h3>The boat ride works, end to end</h3>
-          <p>Nolwik's dinghy ride across the water was confirmed working in the game: the boatman, the clickable dock door, all dialogue pages, and both landing points there and back.</p>
+          <h3>The boat ride carries players both ways</h3>
+          <p>Nolwik's dinghy ride, dock door, conversations and landing points were checked in the game. The crossing now connects the tutorial shore with the next stage of the journey and gives arriving players a memorable first trip.</p>
           <span class="chip verified">Verified in-game</span>
         </div>
       </article>
 
       <article class="entry" data-status="implemented">
         <div class="entry-marker"></div>
-        <div class="entry-date">Nov 7, 2026</div>
+        <div class="entry-date">Nov 11–12, 2026</div>
         <div class="entry-body">
-          <h3>The full tutorial installed</h3>
-          <p>The complete fourteen-lesson tutorial (Captain &rarr; Cartographer &rarr; Researcher &rarr; ink delivery &rarr; Grufph &rarr; Reejis &rarr; Osrik &rarr; Garrick &rarr; Vaelith &rarr; graduation) was installed through a carefully guarded deployment with a full rollback plan, then polished. In-game walkthrough validation followed over the next week.</p>
+          <h3>Wreckwater's shoreline gained its own character</h3>
+          <p>The starting area was tidied and custom crocodiles were placed in the shallows, with their appearance checked in-game. Their combat balance remains under review, and any future beach replacement plan must preserve approved encounters and tutorial spaces.</p>
           <span class="chip implemented">Built &ndash; needs testing</span>
+        </div>
+      </article>
+
+      <article class="entry" data-status="decision">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 15–17, 2026</div>
+        <div class="entry-body">
+          <h3>A clear direction for Vanth</h3>
+          <p>The owner chose to keep building on the current game platform and focus on the playable opening experience. The next priorities are a thoughtful beach population, more adventures toward level 20, and later class-defining abilities and pacing informed by playtests.</p>
+          <span class="chip decision">Decision</span>
         </div>
       </article>
 
       <article class="entry" data-status="implemented">
         <div class="entry-marker"></div>
-        <div class="entry-date">Nov 5, 2026</div>
+        <div class="entry-date">Nov 1–7, 2026</div>
         <div class="entry-body">
-          <h3>Every custom asset catalogued</h3>
-          <p>Every custom character, item and quest is now catalogued with stable names, build notes and history &mdash; the project's insurance policy for rebuilding, checking or moving content later without losing track of what belongs to whom.</p>
+          <h3>Wreckwater Reach became the opening chapter</h3>
+          <p>The starting coast received its name and a fourteen-lesson tutorial with a cast of guides, tasks and a graduation. It began as a carefully planned arrival story and was later completed and verified in-game.</p>
           <span class="chip implemented">Built &ndash; needs testing</span>
         </div>
       </article>
 
       <article class="entry" data-status="designed">
         <div class="entry-marker"></div>
-        <div class="entry-date">Nov 4, 2026</div>
+        <div class="entry-date">Late Oct – early Nov 2026</div>
         <div class="entry-body">
-          <h3>The tutorial's lesson plan written down</h3>
-          <p>The full lesson-by-lesson blueprint for the tutorial: who teaches what, how progress is tracked, the order of lessons, and the decisions the owner needed to make along the way.</p>
-          <span class="chip designed">Designed / planned</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 1, 2026</div>
-        <div class="entry-body">
-          <h3>The zone gets its name: Wreckwater Reach</h3>
-          <p>The zone's player-facing name officially became <strong>Wreckwater Reach</strong>. Only the visible name changed &mdash; renaming the hidden technical identifier would have touched hundreds of references and was judged too risky. Nothing else about the zone was modified.</p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <article class="entry" data-status="designed">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Late Oct &ndash; early Nov 2026</div>
-        <div class="entry-body">
-          <h3>Groundwork: rules, plans and the opening chapter</h3>
-          <p>The project's foundation: permanent operating rules (safety, backups, approvals, research before building), the Blackport tutorial chosen as the first project, and the arrival story &mdash; the boat, the first lessons, the road to town &mdash; as its opening chapter. Since then the rules have grown to include the formal review gate, solo-friendly progression, dialogue-writing standards and the approved designs for loot, undead ambushes, reward safety and character growth.</p>
+          <h3>The world and its rules took shape</h3>
+          <p>The Saga of Vanth inspired a journey from the Wreckwater shore toward Blackport. The early plans set out a solo-friendly adventure, meaningful rewards, careful backups and owner review before live changes. That foundation still guides each new region and feature.</p>
           <span class="chip designed">Designed / planned</span>
         </div>
       </article>
@@ -440,36 +242,18 @@
     <div class="pending-grid">
       <div class="panel pending-card">
         <span class="chip investigating">Investigating</span>
-        <h3>Hands-on reward playtest</h3>
-        <p>One Saltworn Band delivery passed a controlled in-game test. The next session will check the silver chunk, boss reward, duplicate protection, full-pack recovery and reconnect behavior. The normal reward chances and group play still need hands-on verification.</p>
+        <h3>Finish the reward playtest</h3>
+        <p>The Saltworn Band reached a player's pack. Silver chunks, the Blood Sucker prize, duplicate claims, full packs, reconnects and the normal per-fight chances are next.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
-        <h3>Beach population</h3>
-        <p>Next step: the owner describes the creatures and difficulty wanted for a small stretch of
-        beach, and the first region is populated from that description &mdash; with a full rollback
-        plan. Creatures will be placed well away from the arrival landing, and the landing itself
-        stays free of hostile creatures. No creatures have been placed yet.</p>
-      </div>
-      <div class="panel pending-card">
-        <span class="chip investigating">Investigating</span>
-        <h3>Deeper delivery stress tests</h3>
-        <p>Duplicate claims, full inventory and reconnect recovery remain to be tested with the current item-delivery candidate.</p>
-      </div>
-      <div class="panel pending-card">
-        <span class="chip designed">Designed / planned</span>
-        <h3>Full-pack overflow plan</h3>
-        <p>Pending-claim recovery is prepared for a controlled full-pack test. Its current behavior has not yet been verified in the game.</p>
+        <h3>Bring the beach wilderness to life</h3>
+        <p>Review the staged creature mix and its protection plan, then test the first small region before adding permanent encounters. The arrival landing stays clear.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
         <h3>Undead ambushes</h3>
         <p>A designed system where the slain sometimes rise again as a surprise undead encounter &mdash; separate from loot, in three tiers of danger from ordinary to boss. Not yet built.</p>
-      </div>
-      <div class="panel pending-card">
-        <span class="chip designed">Designed / planned</span>
-        <h3>Smarter zone population</h3>
-        <p>Research into filling zones with creatures automatically but sensibly &mdash; respecting safe areas, terrain and limits &mdash; so new regions become faster to build.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
@@ -518,6 +302,6 @@
 
 <button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">&#9650;</button>
 
-<script src="script.js?v=20261118215117"></script>
+<script src="script.js?v=20261118215817"></script>
 </body>
 </html>

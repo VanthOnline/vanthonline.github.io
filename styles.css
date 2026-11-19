@@ -380,12 +380,10 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   color: var(--accent);
 }
 
-/* opening quote beneath the cover - set apart by a short red rule;
-   the quote block itself is centered on screen, text left-aligned */
-.quote-section { padding: 26px 0 8px; }
+/* single Chronicle quote, set apart by a short red rule */
 .quote-hero {
   max-width: 75%;
-  margin: 0 auto;
+  margin: 0 auto 24px;
 }
 .quote-hero::before {
   content: "";
