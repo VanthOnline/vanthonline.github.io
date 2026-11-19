@@ -137,6 +137,8 @@ body {
 main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
 .section { padding: 76px 0 24px; }
+/* Keep the first introduction visually connected to the banner. */
+#overview { padding-top: 32px; }
 
 .section-title {
   font-family: var(--display);
@@ -564,6 +566,7 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   .overview-text .how-to-read { margin-top: 20px !important; }
   body { font-size: 15.5px; }
   .section { padding: 56px 0 16px; }
+  #overview { padding-top: 24px; }
 
   /* hero on portrait phones: taller crop, text zone sits on a solid
      bottom fade so the kicker never sits on top of the artwork */
