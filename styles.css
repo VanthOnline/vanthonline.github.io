@@ -174,17 +174,19 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   display: grid;
   grid-template-columns: 1.55fr 1fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 .overview-text {
   font-size: 1.02rem;
+  display: flex;
+  flex-direction: column;
 }
 .overview-text p + p { margin-top: 16px; }
 .overview-text strong { color: var(--text-bright); font-weight: 600; }
 .overview-text .how-to-read {
   border-top: 1px solid var(--line);
   padding-top: 16px;
-  margin-top: 20px !important;
+  margin-top: auto !important;
   font-size: 0.95rem;
   color: var(--text-dim);
 }
@@ -561,6 +563,7 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   .entry::before { margin-bottom: 4px; }
   .entry-body { grid-column: 1; grid-row: auto; }
   .overview-grid { grid-template-columns: 1fr; }
+  .overview-text .how-to-read { margin-top: 20px !important; }
   body { font-size: 15.5px; }
   .section { padding: 56px 0 16px; }
 

@@ -6,6 +6,17 @@
 (function () {
   "use strict";
 
+  /* Verified lines from the installed Wreckwater tutorial dialogue. */
+  var openingQuote = document.getElementById("openingQuote");
+  var openingLines = [
+    "The sea's full of people who know where they're going. Funny how many of 'em end up somewhere else.",
+    "Ye won't get far in Wreckwater Reach without knowing what keeps a blade out of yer ribs.",
+    "Are ye Ready for Training or have I misjudged you?"
+  ];
+  if (openingQuote) {
+    openingQuote.textContent = openingLines[Math.floor(Math.random() * openingLines.length)];
+  }
+
   /* ---------- scroll progress bar ---------- */
   var bar = document.getElementById("progressBar");
   var toTop = document.getElementById("toTop");

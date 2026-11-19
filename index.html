@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118161014">
+<link rel="stylesheet" href="styles.css?v=20261118215117">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
   <section class="section quote-section" id="opening">
     <figure class="quote quote-hero">
       <blockquote>
-        <p>The sea's full of people who know where they're going. Funny how many of 'em end up somewhere else.</p>
+        <p id="openingQuote">The sea's full of people who know where they're going. Funny how many of 'em end up somewhere else.</p>
       </blockquote>
     </figure>
   </section>
@@ -56,11 +56,11 @@
         <ul class="status-list">
           <li><span class="dot verified"></span><div><strong>The tutorial &amp; the boat ride</strong> are complete and confirmed working in the game.</div></li>
           <li><span class="dot verified"></span><div><strong>First creature placement spots on the beach</strong> were chosen from terrain data and confirmed in the game &mdash; all open sand, clear of water and scenery.</div></li>
-          <li><span class="dot implemented"></span><div><strong>The Wreckwater reward system</strong> is installed and running &mdash; the silver-ring reward chance was repaired today; a full hands-on playtest is still to be scheduled.</div></li>
+          <li><span class="dot implemented"></span><div><strong>Wreckwater item rewards</strong> are in a controlled playtest. The first Saltworn Band reached a character's pack; the other item types and the per-fight reward chance still need testing.</div></li>
           <li><span class="dot implemented"></span><div><strong>The armor collection</strong> (480 pieces) is built and ready; trading between players not yet tried.</div></li>
-          <li><span class="dot verified"></span><div><strong>Coin rewards &amp; safe item delivery</strong> are tested and working in-game.</div></li>
+          <li><span class="dot verified"></span><div><strong>Coin rewards and the first Band delivery</strong> have been confirmed in-game. More delivery and recovery checks are scheduled.</div></li>
           <li><span class="dot investigating"></span><div><strong>The beach population</strong> is next: the zone's existing creatures are catalogued and the protected arrival area must be proven off-limits first.</div></li>
-          <li><span class="dot designed"></span><div><strong>Undead ambushes &amp; full-pack safeguards</strong> are designed but not yet built.</div></li>
+          <li><span class="dot designed"></span><div><strong>Undead ambushes</strong> are designed but not yet built; reward recovery checks are still in progress.</div></li>
         </ul>
       </aside>
     </div>
@@ -69,11 +69,6 @@
   <!-- ============ WORLD MAP ============ -->
   <section class="section" id="world">
     <h2 class="section-title">The World So Far</h2>
-    <figure class="quote quote-rule">
-      <blockquote>
-        <p>Arrrgh, matey, count your blessings for ye made it safely to Wreckwater Reach! There be many strewn about the beach and in the depths of this bay who cannot claim the same...</p>
-      </blockquote>
-    </figure>
     <figure class="map-figure">
       <img src="assets/blackport-region-map.png"
            alt="Hand-illustrated map of the Blackport region: Blackport town and its docks on the Western Ocean, Black Harbor and the Underharbor in the mountains, a tunnel through to the Wreckwater Reach beach, and the Landspine Mountains to the south">
@@ -102,6 +97,16 @@
     </div>
 
     <div class="timeline" id="timelineList">
+
+      <article class="entry" data-status="verified">
+        <div class="entry-marker"></div>
+        <div class="entry-date">Nov 18, 2026</div>
+        <div class="entry-body">
+          <h3>First Saltworn Band delivered in the game</h3>
+          <p>A controlled test delivered the Saltworn Band directly into a character's pack. The player saw the loot notice, and the game recorded the reward. This confirms one real item-delivery path. Silver chunks, the boss reward, duplicate protection and full-pack recovery are still waiting for their own tests.</p>
+          <span class="chip verified">Verified in-game</span>
+        </div>
+      </article>
 
       <article class="entry" data-status="verified">
         <div class="entry-marker"></div>
@@ -138,11 +143,10 @@
         <div class="entry-date">Nov 18, 2026</div>
         <div class="entry-body">
           <h3>Every existing creature in the starting zone catalogued</h3>
-          <p>Before any new population work, all 470 creature spawn records in the Wreckwater zone were
-          inventoried and sorted: 35 are kept as-is (the tutorial cast, the boat crew and the landmarks),
-          roughly half are candidates to be quietly retired, and the rest need the owner's judgment. No
-          creatures have been removed. This is the groundwork that lets the whole beach be repopulated later
-          from a plain-language description.</p>
+          <p>Before any new population work, all 470 creature spawn records in Wreckwater were
+          inventoried: 149 are protected, 291 are candidates for a reversible clearing, and 30 still need
+          a specific owner decision. The tutorial cast, boat crew and special encounters remain protected.
+          No creatures have been removed. This gives the owner a safe starting point for designing the beach.</p>
           <span class="chip investigating">Investigating</span>
         </div>
       </article>
@@ -151,27 +155,11 @@
         <div class="entry-marker"></div>
         <div class="entry-date">Nov 17&ndash;18, 2026</div>
         <div class="entry-body">
-          <h3>Old editor tool retired</h3>
-          <p>An unfinished in-house editor from early development has been removed from the game server. Checks confirmed no leftover editor-made content remains and every originally placed item is untouched. The game behaves exactly as before; one routine restart will finish clearing it out.</p>
+          <h3>Wreckwater rewards prepared for playtesting</h3>
+          <p>The beach reward rules are installed: a one-in-four chance for a Saltworn reward, a special reward from the Blood Sucker, and a one-in-ten chance for personalized armor, alongside automatic coins. The first Band delivery is confirmed. The normal per-fight item chances, other item types, full-pack recovery and combined notices still need hands-on checks before the system can be called complete.</p>
           <span class="chip implemented">Built &ndash; needs testing</span>
         </div>
       </article>
-
-      <article class="entry" data-status="implemented">
-        <div class="entry-marker"></div>
-        <div class="entry-date">Nov 17&ndash;18, 2026</div>
-        <div class="entry-body">
-          <h3>Full Wreckwater reward system goes live</h3>
-          <p>The beach's complete reward system is now running on the game server: <strong>beach kills have a 25% chance</strong> to award a ring (the Saltworn Band the first time, then sellable Saltworn Silver chunks after that); the <strong>Blood Sucker boss always awards</strong> a reusable self-healing potion; any kill still has a <strong>10% chance</strong> to award a piece of armor picked to fit your character; and coins continue automatically as before. Rewards appear straight in your pack &mdash; there are no lootable corpses &mdash; and each fight produces a single combined <em>"You have new loot!"</em> notice. <strong>Still needed: a full hands-on playtest in the game (14 checks).</strong></p>
-          <span class="chip implemented">Built &ndash; needs testing</span>
-        </div>
-      </article>
-
-      <figure class="quote quote-rule quote-inline">
-        <blockquote>
-          <p>Ye won't get far in Wreckwater Reach without knowing what keeps a blade out of yer ribs.</p>
-        </blockquote>
-      </figure>
 
       <article class="entry" data-status="implemented">
         <div class="entry-marker"></div>
@@ -267,8 +255,8 @@
         <div class="entry-marker"></div>
         <div class="entry-date">Nov 17, 2026</div>
         <div class="entry-body">
-          <h3>Proved: a full pack never loses a reward</h3>
-          <p>A live, supervised test proved that a reward earned while your pack is full is never lost: it waits safely and slips into your inventory the moment space frees up. No duplicates, no lost items, nothing else disturbed.</p>
+          <h3>First full-pack test passed for a test item</h3>
+          <p>In a supervised earlier test, a test dagger waited when the pack was full and appeared after space opened. The current Saltworn rewards still need their own full-pack and reconnect checks.</p>
           <span class="chip verified">Verified in-game</span>
         </div>
       </article>
@@ -449,16 +437,11 @@
   <!-- ============ PENDING / INVESTIGATIONS ============ -->
   <section class="section" id="pending">
     <h2 class="section-title">On the To-Do List</h2>
-    <figure class="quote quote-rule quote-inline">
-      <blockquote>
-        <p>Are ye Ready for Training or have I misjudged you?</p>
-      </blockquote>
-    </figure>
     <div class="pending-grid">
       <div class="panel pending-card">
         <span class="chip investigating">Investigating</span>
         <h3>Hands-on reward playtest</h3>
-        <p>A 14-point in-game checklist for the new reward system: the ring rewards, the boss potion, combined notices, coin behavior, armor trades and group play. Waiting for a convenient session.</p>
+        <p>One Saltworn Band delivery passed a controlled in-game test. The next session will check the silver chunk, boss reward, duplicate protection, full-pack recovery and reconnect behavior. The normal reward chances and group play still need hands-on verification.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
@@ -471,12 +454,12 @@
       <div class="panel pending-card">
         <span class="chip investigating">Investigating</span>
         <h3>Deeper delivery stress tests</h3>
-        <p>Remaining safety proofs for item delivery: duplicate protection across restarts and reconnects, simultaneous claims, and recovery from failures.</p>
+        <p>Duplicate claims, full inventory and reconnect recovery remain to be tested with the current item-delivery candidate.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
         <h3>Full-pack overflow plan</h3>
-        <p>A designed safeguard so rewards still reach players whose packs are already full, beyond the safety net already proven in-game. Needs the owner's go-ahead before building.</p>
+        <p>Pending-claim recovery is prepared for a controlled full-pack test. Its current behavior has not yet been verified in the game.</p>
       </div>
       <div class="panel pending-card">
         <span class="chip designed">Designed / planned</span>
@@ -514,7 +497,7 @@
       </div>
       <div class="panel rule-card">
         <h3>Reward Overflow Design</h3>
-        <p>An approved promise: no earned reward is ever lost, even when your pack is full. The core safety net is already proven in-game; the final layer still needs building.</p>
+        <p>The approved design calls for rewards to wait when a pack is full. The current delivery candidate still needs its full-pack and reconnect tests; exceptional losses before a claim is recorded may be handled by the GM.</p>
       </div>
       <div class="panel rule-card">
         <h3>Progression &amp; Adventure Design</h3>
@@ -535,6 +518,6 @@
 
 <button class="to-top" id="toTop" aria-label="Back to top" title="Back to top">&#9650;</button>
 
-<script src="script.js?v=20261118161014"></script>
+<script src="script.js?v=20261118215117"></script>
 </body>
 </html>
