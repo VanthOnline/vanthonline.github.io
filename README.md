@@ -2,7 +2,7 @@
 
 A public, single-page development-history site for **Vanth Online**, a custom fantasy MMORPG based on *The Saga of Vanth*.
 
-**Live page:** https://bsilverstein-cds.github.io/VanthOnline/
+**Live page:** https://vanthonline.github.io/
 
 ## What it is
 
