@@ -382,7 +382,7 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
    the quote block itself is centered on screen, text left-aligned */
 .quote-section { padding: 26px 0 8px; }
 .quote-hero {
-  max-width: 46ch;
+  max-width: 75%;
   margin: 0 auto;
 }
 .quote-hero::before {
@@ -402,7 +402,7 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 .quote-rule {
   border-left: 2px solid var(--accent);
   padding: 4px 0 4px 26px;
-  max-width: 58ch;
+  max-width: 75%;
   margin: 0 auto;
 }
 .quote-rule p {
